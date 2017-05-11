@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  wscassandra:
+    container_name: ws_cassandra
+    build: .
+    ports:
+    #  intra-node communication
+    - 7000
+    # TLS intra-node communication
+    - 7001
+    # JMX
+    - 7199
+    # CQL
+    - 9042
+    # thrift service
+    - 9160
