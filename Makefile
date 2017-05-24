@@ -1,6 +1,6 @@
 
 SERVICE=wscassandra
-SPARK_EXEC=docker-compose exec $(SERVICE) bash -c 
+CASSANDRA_EXEC=docker-compose exec $(SERVICE) bash -c 
 
 build: clean
 	docker-compose build
