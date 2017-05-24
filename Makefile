@@ -3,7 +3,7 @@ SERVICE=wscassandra
 SPARK_EXEC=docker-compose exec $(SERVICE) bash -c 
 
 build: clean
-	docker-compose build $(SERVICE)
+	docker-compose build
 
 start:
 	docker-compose up -d
@@ -12,7 +12,7 @@ stop:
 	docker-compose kill || true
 
 clean: stop
-	docker-compose rm -fv
+	docker-compose rm -f
 
 install:
 	$(CASSANDRA_EXEC) "python /tmp/cassandra/cassandradump.py --import-file=/tmp/wscasandra_structure.cql"

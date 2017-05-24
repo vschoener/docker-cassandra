@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  wscassandra:
+    networks:
+      - ws_backend
+
+networks:
+  ws_backend:
+    external:
+      name: ws_backend
